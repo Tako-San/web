@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h2>Хронологическая таблица событий</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Описание</th>
+            <th>Категория</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td>{{ event.date }}</td>
+            <td>{{ event.description }}</td>
+            <td>{{ event.get_category_display }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
