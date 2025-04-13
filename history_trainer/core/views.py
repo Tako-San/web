@@ -25,3 +25,14 @@ def events_table(request):
 def take_quiz(request):
     questions = QuizQuestion.objects.all()
     return render(request, 'core/quiz.html', {'questions': questions})
+
+def quiz_result(request):
+    if request.method == 'POST':
+        score = 0
+        total = QuizQuestion.objects.count()
+        for question in QuizQuestion.objects.all():
+            user_answer = request.POST.get(f'question_{question.id}')
+            if user_answer == question.correct_answer:
+                score += 1
+        return render(request, 'core/quiz_result.html', {'score': score, 'total': total})
+    return redirect('quiz')
