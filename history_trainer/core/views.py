@@ -17,7 +17,7 @@ def add_event(request):
 
 def events_table(request):
     category = request.GET.get('category', '')
-    events = HistoricalEvent.objects.all()
+    events = HistoricalEvent.objects.all().order_by('date')
     if category:
         events = events.filter(category=category)
     return render(request, 'core/events_table.html', {'events': events})
