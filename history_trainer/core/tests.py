@@ -1,3 +1,3 @@
-from django.test import TestCase
+"""This module contains unit tests for the core app."""  # Пример
 
-# Create your tests here.
+# from django.test import TestCase
