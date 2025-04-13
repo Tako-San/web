@@ -1,10 +1,21 @@
 {% extends 'core/base.html' %}
 {% block content %}
-<h1>Тренажёр для изучения исторических событий</h1>
-<p>Добро пожаловать в наш тренажёр! Здесь вы можете добавлять исторические события, просматривать их в хронологическом порядке и проверять свои знания с помощью интерактивных тестов.</p>
-<ul>
-    <li><a href="{% url 'add_event' %}">Добавить событие</a></li>
-    <li><a href="{% url 'events_table' %}">Хронологическая таблица событий</a></li>
-    <li><a href="{% url 'quiz' %}">Интерактивный тест</a></li>
-</ul>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title display-4">Тренажёр для изучения исторических событий</h1>
+                <p class="card-text lead">Добро пожаловать в наш тренажёр! Здесь вы можете добавлять исторические события,
+                    просматривать их в хронологическом порядке и проверять свои знания с помощью интерактивных тестов.</p>
+                <hr class="my-4">
+                <p>Начните прямо сейчас!</p>
+                <div class="d-grid gap-2 d-md-block">
+                    <a class="btn btn-primary btn-lg me-md-2" href="{% url 'add_event' %}" role="button">Добавить
+                        событие</a>
+                    <a class="btn btn-secondary btn-lg me-md-2" href="{% url 'events_table' %}" role="button">Просмотреть
+                        события</a>
+                    <a class="btn btn-success btn-lg" href="{% url 'quiz' %}" role="button">Пройти тест</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,14 +1,132 @@
-<!-- base.html -->
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>History Trainer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ваши собственные стили */
+        body {
+            padding-top: 70px;
+            /* Чтобы контент не перекрывался навигационной панелью */
+            font-family: 'Roboto', sans-serif;
+            /* Изменим шрифт */
+            background-color: #f0f8ff;
+            /* Светлый фон для всей страницы */
+        }
+
+        .navbar {
+            background-color: #343a40;
+            /* Темный фон для навигации */
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            /* Белый цвет текста в навигации */
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #adb5bd !important;
+            /* Цвет текста при наведении */
+        }
+
+        .footer {
+            background-color: #343a40;
+            padding: 20px 0;
+            margin-top: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .table {
+            background-color: white;
+            /* Белый фон для таблиц */
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* Тень для карточек */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">History Trainer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_event' %}">Добавить событие</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'events_table' %}">Таблица событий</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'quiz' %}">Тест</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 History Trainer</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

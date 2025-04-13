@@ -1,6 +1,12 @@
 {% extends 'core/base.html' %}
 {% block content %}
-<h2>Результат теста</h2>
-<p>Правильных ответов: {{ score }} из {{ total }}</p>
-<a href="{% url 'quiz' %}" class="btn btn-primary">Попробовать снова</a>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Результат теста</h2>
+                <p class="card-text">Правильных ответов: {{ score }} из {{ total }}</p>
+                <a href="{% url 'quiz' %}" class="btn btn-primary">Попробовать снова</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
